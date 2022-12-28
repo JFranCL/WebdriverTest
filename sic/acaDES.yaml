@@ -1,0 +1,52 @@
+version: 1.0.0
+parameters: 
+resources: 
+  environments: 
+    - id: des 
+      environment: des 
+      position: 1 
+      deploymentType: AUTOMATIC 
+      namespace: dun-oc
+  infrastructures: 
+    - id: 9999_equipaments_weblogic12_ENS_AM05
+      element: weblogic 
+      environments: 
+        - environment: des 
+          vars: 
+            deploymentName : DUNOC
+      provider:
+    - id: cloud
+      element: openshift 
+      environments: 
+        - environment: des 
+          vars: 
+            deploymentName : DUNOC
+      provider:
+  artifacts: 
+    - id: artifact01
+      artifactType: dynamic
+      path: dunoc-backtest/dunoc-backtest-service/target/dunoc-backtest-service-1.0.0.jar
+build: 
+  steps: 
+    - id: bs001 
+      position: 1 
+      tool: maven 
+      parameters: clean
+    - id: bs002
+      position: 2
+      tool: maven 
+      parameters: install
+      generates: 
+        - artifact01 
+    - id: bs003 
+      position: 3 
+      tool: maven-selenium 
+      parameters: test
+deploy: 
+  steps: 
+    - id: dp001
+      position: 1
+      type: cloud
+      tool: maven
+      destination: cloud
+      artifact: artifact01
