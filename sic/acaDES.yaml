@@ -35,7 +35,7 @@ build:
     - id: bs002
       position: 2
       tool: maven 
-      parameters: install
+      parameters: -X install
       generates: 
         - artifact01 
     - id: bs003 
