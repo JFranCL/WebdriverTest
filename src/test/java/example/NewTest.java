@@ -13,9 +13,9 @@ public class NewTest {
 	    private WebDriver driver;		
 		@Test				
 		public void testEasy() {	
-			driver.get("http://demo.guru99.com/test/guru99home/");  
+			driver.get("https://demo.guru99.com/test/guru99home/");  
 			String title = driver.getTitle();				 
-			AssertJUnit.assertTrue(title.contains("Demo Guru99 Page")); 		
+			Assert.assertTrue(title.contains("Demo Guru99 Page")); 		
 		}	
 		@BeforeTest
 		public void beforeTest() {	
