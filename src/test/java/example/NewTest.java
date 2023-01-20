@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;	
 import org.testng.annotations.AfterTest;		
 public class NewTest {		
-	System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
 	    private WebDriver driver;		
 		@Test				
 		public void testEasy() {	
@@ -19,7 +18,8 @@ public class NewTest {
 			Assert.assertTrue(title.contains("Demo Guru99 Page")); 		
 		}	
 		@BeforeTest
-		public void beforeTest() {	
+		public void beforeTest() {
+		    System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
 		    driver = new FirefoxDriver();  
 		}		
 		@AfterTest
