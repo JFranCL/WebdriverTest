@@ -15,11 +15,24 @@ public class NewTest {
 		public void testEasy() {	
 			driver.get("https://demo.guru99.com/test/guru99home/");  
 			String title = driver.getTitle();				 
-			Assert.assertTrue(title.contains("Demo Guru99 Page")); 		
+			Assert.assertTrue(title.contains("Demo Guru99 Page"));
+			System.out.println("Todo ha ido de lujo nene");
+		}	
+		@Test				
+		public void testBad() {	
+			driver.get("https://demo.gurusda99.com/test/guru99home/");  
+			String title = driver.getTitle();				 
+			Assert.assertTrue(title.contains("Demo Guru99 Page"));
+		}	
+		@Test				
+		public void testBadtwo() {	
+			driver.get("https://demo.guru99.com/test/guru99home/");  
+			String title = driver.getTitle();				 
+			Assert.assertTrue(title.contains("Demo Guru99sad Page"));
 		}	
 		@BeforeTest
 		public void beforeTest() {
-		    System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
+		    //System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
 		    driver = new FirefoxDriver();  
 		}		
 		@AfterTest
