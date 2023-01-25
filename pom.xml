@@ -57,7 +57,7 @@
 					<version>3.0.0-M7</version>
 					<inherited>true</inherited>
 					<configuration>
-						<!-- <suiteXmlFiles>
+						<suiteXmlFiles>
 							<suiteXmlFile>testng.xml</suiteXmlFile>
 						</suiteXmlFiles> 
 					</configuration> 
