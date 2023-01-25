@@ -51,17 +51,17 @@
 					</configuration>
 				</plugin>
 		
-				<!-- <plugin>
+				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>3.0.0-M7</version>
 					<inherited>true</inherited>
 					<configuration>
-						<suiteXmlFiles>
+						<!-- <suiteXmlFiles>
 							<suiteXmlFile>testng.xml</suiteXmlFile>
-						</suiteXmlFiles>
+						</suiteXmlFiles> -->
 					</configuration>
-				</plugin> -->
+				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
